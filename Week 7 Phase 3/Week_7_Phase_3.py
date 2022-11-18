@@ -36,10 +36,15 @@ def printinfo(DetailsPrinted):
     TotNetPay = 0.00
 ###################################################################
     # write the line of code to open Employees.txt file in read mode and assign to EmpFile
-   
-    EmpFile = open('Employees.txt', 'r')
-    Empfile = Empfile.write('Employees.txt')
-    EmpFile.close()
+  
+FILENAME = "Employees.txt"
+
+def read_EmpFile():  
+    EmpFile = []  
+    with open(FILENAME) as file:  
+        return EmpFile
+
+    
 
 
     while True:
