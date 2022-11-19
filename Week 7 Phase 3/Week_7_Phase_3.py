@@ -1,6 +1,6 @@
-#
-#
-#
+#Chad Givens
+#CIS261 
+#Week 7 Phase 3 Course Project 
 # write the line of code to import the datetime library (Hint: look at week 1 labs)
 
 from datetime import datetime
@@ -56,6 +56,9 @@ def printinfo():
             checkdate = datetime.strptime(fromdate, "%m/%d/%Y")
             if (checkdate < rundate):
                 continue
+        todate = EmpList[1]
+        empname = EmpList[2]
+        hours = float(EmpList[3])
         hourlyrate = float(EmpList[4])
         taxrate = float(EmpList[5])
         grosspay, incometax, netpay = CalcTaxAndNetPay(hours, hourlyrate, taxrate)
