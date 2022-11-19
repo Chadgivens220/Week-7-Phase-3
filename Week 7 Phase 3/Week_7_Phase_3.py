@@ -56,10 +56,10 @@ def printinfo():
             checkdate = datetime.strptime(fromdate, "%m/%d/%Y")
             if (checkdate < rundate):
                 continue
-        hourlyrate  = float(EmpList[4])
+        hourlyrate = float(EmpList[4])
         taxrate = float(EmpList[5])
         grosspay, incometax, netpay = CalcTaxAndNetPay(hours, hourlyrate, taxrate)
-        print(fromdate, todate, empname, f"{hours:,.2f}",  f"{hourlyrate:,.2f}", f"{grosspay:,.2f}",  f"{taxrate:,.1%}",  f"{incometax:,.2f}",  f"{netpay:,.2f}")
+        print(fromdate, todate, empname, f"{hours:,.2f}", f"{hourlyrate:,.2f}", f"{grosspay:,.2f}", f"{taxrate:,.1%}", f"{incometax:,.2f}", f"{netpay:,.2f}")
         TotEmployees += 1
         TotHours += hours
         TotGrossPay += grosspay
@@ -84,7 +84,7 @@ def PrintTotals(EmpTotals):
 
 if __name__ == "__main__":
     EmpFile = open("Employees.txt", "a+")
-    #EmpDetailList = []
+    EmpDetailList = []
     EmpTotals = {}
     while True:
         empname = GetEmpName()
