@@ -43,10 +43,8 @@ def read_EmpFile():
     EmpFile = []  
     with open(FILENAME) as file:  
         return EmpFile
-
-    
-
-
+    EmpFile = Employees.txt
+   
     while True:
         rundate = input ("Enter start date for report (MM/DD/YYYY) or All for all data in file: ")
         if (rundate.upper() == "ALL"):
@@ -59,6 +57,8 @@ def read_EmpFile():
             print()
             continue  # skip next if statement and re-start loop
     while True:
+        EmpFile = read_EmpFile()
+
         # write the line of code to read a record from EmpFile and assign it to EmpDetail
 
         if not EmpDetail:
