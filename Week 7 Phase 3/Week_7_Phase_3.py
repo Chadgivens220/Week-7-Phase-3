@@ -1,7 +1,7 @@
 #Chad Givens
 #CIS261 
 #Week 7 Phase 3 Course Project 
-# write the line of code to import the datetime library (Hint: look at week 1 labs)
+
 
 from datetime import datetime
 
@@ -44,7 +44,7 @@ def printinfo():
         except ValueError:
             print("Invalid date format. Try again.")
             print()
-            continue  # skip next if statement and re-start loop
+            continue  
     while True:
         EmpDetail = EmpFile.readline()
         if not EmpDetail:
