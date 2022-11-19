@@ -33,9 +33,7 @@ def printinfo():
     TotGrossPay = 0.00
     TotTax = 0.00
     TotNetPay = 0.00
-###################################################################
-    
-    EmpFile = open("Employee.txt", "r")   
+    EmpFile = open("Employees.txt", "r")   
     while True:
         rundate = input ("Enter start date for report (MM/DD/YYYY) or All for all data in file: ")
         if (rundate.upper() == "ALL"):
@@ -58,7 +56,6 @@ def printinfo():
             checkdate = datetime.strptime(fromdate, "%m/%d/%Y")
             if (checkdate < rundate):
                 continue
-######################################################################
         hourlyrate  = float(EmpList[4])
         taxrate = float(EmpList[5])
         grosspay, incometax, netpay = CalcTaxAndNetPay(hours, hourlyrate, taxrate)
@@ -85,11 +82,10 @@ def PrintTotals(EmpTotals):
 
 
 
-if __name__ == "__main__":  
+if __name__ == "__main__":
     EmpFile = open("Employees.txt", "a+")
-    EmpDetailList = []
+    #EmpDetailList = []
     EmpTotals = {}
-    DetailsPrinted = False
     while True:
         empname = GetEmpName()
         if (empname.upper() == "END"):
@@ -98,7 +94,6 @@ if __name__ == "__main__":
         hours = GetHoursWorked()
         hourlyrate = GetHourlyRate()
         taxrate = GetTaxRate()
-        ##############################################################
         EmpDetail = fromdate + "|" + todate + "|" + empname + "|" + str(hours) + "|" + str(hourlyrate) + "|" + str(taxrate) + "\n"
         EmpFile.write(EmpDetail) 
     EmpFile.close()
@@ -108,4 +103,5 @@ if __name__ == "__main__":
          PrintTotals (EmpTotals)  
     else: 
          print("No information to print")
+
     
