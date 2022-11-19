@@ -2,7 +2,7 @@
 #
 #
 # write the line of code to import the datetime library (Hint: look at week 1 labs)
-from ast import main
+
 from datetime import datetime
 
 def GetEmpName():
@@ -27,7 +27,7 @@ def CalcTaxAndNetPay(hours, hourlyrate, taxrate):
     netpay = grosspay - incometax
     return grosspay, incometax, netpay
 
-def printinfo(DetailsPrinted):
+def printinfo():
     TotEmployees = 0
     TotHours = 0.00
     TotGrossPay = 0.00
@@ -57,11 +57,8 @@ def printinfo(DetailsPrinted):
         if (str(rundate).upper() != "ALL"):
             checkdate = datetime.strptime(fromdate, "%m/%d/%Y")
             if (checkdate < rundate):
-                continue        
+                continue
 ######################################################################
-        todate = EmpList[1]
-        empname = EmpList[2]
-        hours = float(EmpList[3])
         hourlyrate  = float(EmpList[4])
         taxrate = float(EmpList[5])
         grosspay, incometax, netpay = CalcTaxAndNetPay(hours, hourlyrate, taxrate)
@@ -77,10 +74,7 @@ def printinfo(DetailsPrinted):
         EmpTotals["TotTax"] = TotTax
         EmpTotals["TotNetPay"] = TotNetPay
         DetailsPrinted = True   
-    if (DetailsPrinted):  #skip of no detail lines printed
-        PrintTotals (EmpTotals)
-    else:
-        print("No detail information to print")
+    
 def PrintTotals(EmpTotals):    
     print()
     print(f'Total Number Of Employees: {EmpTotals["TotEmp"]}')
@@ -93,7 +87,7 @@ def PrintTotals(EmpTotals):
 
 if __name__ == "__main__":  
     EmpFile = open("Employees.txt", "a+")
-    #EmpDetailList = []
+    EmpDetailList = []
     EmpTotals = {}
     DetailsPrinted = False
     while True:
@@ -107,17 +101,11 @@ if __name__ == "__main__":
         ##############################################################
         EmpDetail = fromdate + "|" + todate + "|" + empname + "|" + str(hours) + "|" + str(hourlyrate) + "|" + str(taxrate) + "\n"
         EmpFile.write(EmpDetail) 
-        EmpFile.close()
-        DetailsPrinted = False
-        printinfo() 
-        
-        if (DetailsPrinted): 
-            PrintTotals (EmpTotals)  
-        else: 
-            print("No information to print")
-    printinfo(DetailsPrinted)
-
-
-
-####################################################################
-
+    EmpFile.close()
+    DetailsPrinted = False
+    printinfo()     
+    if (DetailsPrinted): 
+         PrintTotals (EmpTotals)  
+    else: 
+         print("No information to print")
+    
