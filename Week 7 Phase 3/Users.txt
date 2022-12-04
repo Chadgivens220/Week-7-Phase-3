@@ -1,2 +1,7 @@
 Chad Givens|password1|admin
 Chad Givens|password 2|Admin
+Chad Givens|password1|admin
+Chad Givens|password1|admin
+Kristin Givens|password3|Admin
+Caleb Givens|password5|user
+Chad Givens|password1|Admin

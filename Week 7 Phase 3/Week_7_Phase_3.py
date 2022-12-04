@@ -1,6 +1,6 @@
 #Chad Givens
 #CIS261 
-#Week 7 Phase 3 Course Project 
+#Week 9 Phase 4 Course Project 
 
 
 from datetime import datetime
@@ -172,11 +172,8 @@ if __name__ == "__main__":
                 EmpDetail = fromdate + "|" + todate + "|" + empname + "|" + str(hours) + "|" + str(hourlyrate) + "|" + str(taxrate) + "\n"
                 EmpFile.write(EmpDetail) 
             EmpFile.close()
-            DetailsPrinted = False
-            printinfo()     
-            if (DetailsPrinted): 
-                 PrintTotals (EmpTotals)  
-            else: 
-                 print("No information to print")
+        printinfo(DetailsPrinted)
+           
+           
 
     
